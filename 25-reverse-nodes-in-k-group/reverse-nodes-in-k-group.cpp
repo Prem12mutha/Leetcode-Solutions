@@ -25,6 +25,7 @@ public:
 
         temp = head;
         count = 0;
+        
         while(count < k){
             ListNode* next = temp->next;
             temp->next = prevNode;
