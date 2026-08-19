@@ -13,14 +13,9 @@ public:
                 height = heights[s.top()];
                 s.pop();
                 width = s.empty() ? i : i - s.top() - 1;
-                maxArea = max(maxArea ,height * width);
-                
-                    
-                
+                maxArea = max(maxArea ,height * width);    
             }
                 s.push(i);
-            
-
         }
         return maxArea;
     }
