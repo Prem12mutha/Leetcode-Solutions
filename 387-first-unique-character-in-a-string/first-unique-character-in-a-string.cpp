@@ -1,21 +1,19 @@
 class Solution {
 public:
     int firstUniqChar(string s) {
-        unordered_map<int,int> freq;
-        queue<pair<char,int>> q;
+        unordered_map<char , int> m;
+        queue<int> q;
 
-        for(int i = 0; i < s.length(); i++){
-            freq[s[i]]++;
-            q.push({s[i] , i});
-        }
-
-        while(!q.empty()){
-            auto front = q.front();
-            if(freq[front.first] == 1){
-                return front.second;
+        for(int i = 0 ; i < s.size() ; i++){
+            if(m.find(s[i]) == m.end()){
+                q.push(i);
             }
-            q.pop();
+            m[s[i]]++;
+
+            while(q.size() > 0 && m[s[q.front()]] > 1){
+                q.pop();
+            }
         }
-        return -1;
+        return q.empty() ? -1 : q.front();
     }
 };
