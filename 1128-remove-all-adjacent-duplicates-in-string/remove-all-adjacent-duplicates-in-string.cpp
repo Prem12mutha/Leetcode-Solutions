@@ -16,8 +16,6 @@ public:
             str.insert(str.begin() , st.top());
             st.pop();
         }
-
-
         return str;
     }
 };
