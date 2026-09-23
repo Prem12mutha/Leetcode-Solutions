@@ -1,21 +1,14 @@
 class Solution {
 public:
     string removeDuplicates(string s) {
-        stack<char> st;
-
-        for(int i = 0 ; i < s.length() ; i++){
-            if(!st.empty() && st.top() == s[i]){
-                st.pop();
-            }
-            else{
-                st.push(s[i]);
+        string st = "";  // use string as a stack
+        for(char c : s){
+            if(!st.empty() && st.back() == c){
+                st.pop_back();   // remove duplicate
+            } else {
+                st.push_back(c); // keep character
             }
         }
-        string str = "";
-        while(!st.empty()){
-            str.insert(str.begin() , st.top());
-            st.pop();
-        }
-        return str;
+        return st;
     }
 };
