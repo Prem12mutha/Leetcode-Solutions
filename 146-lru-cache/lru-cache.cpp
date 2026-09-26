@@ -77,7 +77,7 @@ public:
             m.erase(tail->prev->key);
             delNode(tail->prev);
         }
-        
+
         Node* newNode = new Node(key,value);
         addNode(newNode);
         m[key] = newNode;
