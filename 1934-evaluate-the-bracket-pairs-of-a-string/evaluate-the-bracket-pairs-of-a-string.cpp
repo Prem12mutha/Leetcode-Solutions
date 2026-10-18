@@ -20,7 +20,8 @@ public:
                 // Step 3: Replace with value or "?"
                 if(mp.count(key)) result += mp[key];
                 else result += "?";
-            } else {
+            } 
+            else {
                 result.push_back(s[i]);
             }
         }
